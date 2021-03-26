@@ -2,7 +2,9 @@ package Elevator.model;
 
 import java.io.Serializable;
 
-public class ElevatorSimulation implements Serializable {
+import Elevator.GlobalVariables;
+
+public class ElevatorSimulation implements Serializable ,GlobalVariables {
 
 	/**
 	 * 

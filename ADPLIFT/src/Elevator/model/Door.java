@@ -11,8 +11,6 @@ public class Door implements Serializable {
 
 	private boolean isOpen = false;
 
-	public static final int AUTOMATIC_CLOSE_DELAY = 3000;
-
 	private Location doorLocation;
 
 	public boolean isOpen() {
