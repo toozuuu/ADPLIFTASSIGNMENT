@@ -1,6 +1,13 @@
 package Elevator.model;
 
-public class Elevator {
+import java.io.Serializable;
+
+public class Elevator implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private String currentFloorLocation;
 	private String destinationFloorLocation;
 	private boolean isBellRing = false;

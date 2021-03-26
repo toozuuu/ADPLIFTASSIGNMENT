@@ -1,11 +1,19 @@
 package Elevator.model;
 
-public class Person {
+import java.io.Serializable;
 
-	private String destinationFloorLocation;
+public class Person implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Location location;
+	
 	private boolean isMove = false;
 
-	private static final int TIME_TO_WALK = 3000;
+	public static final int WAKK_TIME = 3000;
 	public static final int PERSON_CREATED = 1;
 	public static final int PERSON_ARRIVED = 2;
 	public static final int PERSON_ENTERING_ELEVATOR = 3;
@@ -13,20 +21,21 @@ public class Person {
 	public static final int PERSON_EXITED = 6;
 	public static final int PERSON_PRESSING_BUTTON = 4;
 
-	public String getDestinationFloorLocation() {
-		return destinationFloorLocation;
-	}
-
-	public void setDestinationFloorLocation(String destinationFloorLocation) {
-		this.destinationFloorLocation = destinationFloorLocation;
-	}
-
+	
 	public boolean isMove() {
 		return isMove;
 	}
 
 	public void setMove(boolean isMove) {
 		this.isMove = isMove;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
 	}
 
 }
