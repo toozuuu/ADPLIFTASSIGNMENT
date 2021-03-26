@@ -6,20 +6,19 @@ import Elevator.GlobalVariables;
 
 /**
  * Person Model Class
+ * 
  * @author H.D.Sachin Dilshan
  * @version 1.0.0
  * @since Version 1.0.0
  */
 
-public class Person extends GlobalVariables implements Serializable {
+public class Person implements Serializable, GlobalVariables {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
-	
-	
+
 	private Location location;
 
 	private boolean isMove = false;

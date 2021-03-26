@@ -6,12 +6,13 @@ import Elevator.GlobalVariables;
 
 /**
  * ElevatorSimulation Model Class
+ * 
  * @author H.D.Sachin Dilshan
  * @version 1.0.0
  * @since Version 1.0.0
  */
 
-public class ElevatorSimulation extends GlobalVariables implements Serializable {
+public class ElevatorSimulation implements Serializable, GlobalVariables {
 
 	/**
 	 * 
@@ -55,6 +56,5 @@ public class ElevatorSimulation extends GlobalVariables implements Serializable 
 	public void setNumberOfPeople(int numberOfPeople) {
 		this.numberOfPeople = numberOfPeople;
 	}
-
 
 }

@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Elevator Model Class
+ * 
  * @author H.D.Sachin Dilshan
  * @version 1.0.0
  * @since Version 1.0.0
@@ -14,12 +15,15 @@ public class Elevator implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	private String currentFloorLocation;
 	private String destinationFloorLocation;
 	private boolean isBellRing = false;
 	private boolean isDoorOpen = false;
 	private boolean isMove = false;
+
+	private Door elevatorDoor;
+	private Button elevatorButton;
 
 	public String getCurrentFloorLocation() {
 		return currentFloorLocation;
@@ -59,6 +63,22 @@ public class Elevator implements Serializable {
 
 	public void setMove(boolean isMove) {
 		this.isMove = isMove;
+	}
+
+	public Door getElevatorDoor() {
+		return elevatorDoor;
+	}
+
+	public void setElevatorDoor(Door elevatorDoor) {
+		this.elevatorDoor = elevatorDoor;
+	}
+
+	public Button getElevatorButton() {
+		return elevatorButton;
+	}
+
+	public void setElevatorButton(Button elevatorButton) {
+		this.elevatorButton = elevatorButton;
 	}
 
 }

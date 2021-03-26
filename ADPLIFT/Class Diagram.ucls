@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="Elevator.model.Elevator" project="ADPLIFT" 
     file="/ADPLIFT/src/Elevator/model/Elevator.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="819" y="967"/>    
+    <position height="-1" width="-1" x="823" y="1031"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="Elevator.model.Floor" project="ADPLIFT" 
     file="/ADPLIFT/src/Elevator/model/Floor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="875" y="1343"/>    
+    <position height="-1" width="-1" x="1230" y="1318"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,74 +84,74 @@
   </class>  
   <association id="10">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="11" name="secondFloorButton">        
-        <position height="18" width="99" x="867" y="684"/>      
+      <attribute id="11" name="firstFloorDoor">        
+        <position height="18" width="74" x="472" y="532"/>      
       </attribute>      
       <multiplicity id="12" minimum="0" maximum="1">        
+        <position height="16" width="23" x="508" y="548"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="14" name="elevator">        
+        <position height="0" width="0" x="4" y="64"/>      
+      </attribute>      
+      <multiplicity id="15" minimum="0" maximum="1">        
+        <position height="0" width="0" x="4" y="64"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="16">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="17" name="secondFloorButton">        
+        <position height="18" width="99" x="867" y="684"/>      
+      </attribute>      
+      <multiplicity id="18" minimum="0" maximum="1">        
         <position height="16" width="23" x="917" y="700"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="13">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="14" name="firstFloorLight">        
-        <position height="18" width="74" x="500" y="762"/>      
-      </attribute>      
-      <multiplicity id="15" minimum="0" maximum="1">        
-        <position height="16" width="23" x="526" y="783"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="16">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="17" name="location">        
-        <position height="18" width="45" x="193" y="1182"/>      
-      </attribute>      
-      <multiplicity id="18" minimum="0" maximum="1">        
-        <position height="16" width="23" x="207" y="1206"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="19">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="20" name="firstFloorButton">        
-        <position height="18" width="82" x="881" y="595"/>      
-      </attribute>      
-      <multiplicity id="21" minimum="0" maximum="1">        
-        <position height="16" width="23" x="925" y="616"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="22">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="23" name="doorLocation">        
+      <attribute id="20" name="doorLocation">        
         <position height="18" width="71" x="306" y="1152"/>      
       </attribute>      
-      <multiplicity id="24" minimum="0" maximum="1">        
+      <multiplicity id="21" minimum="0" maximum="1">        
         <position height="16" width="23" x="325" y="1177"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="25">    
-    <bendpoint x="1169" y="392"/>    
-    <bendpoint x="1169" y="783"/>    
-    <bendpoint x="1169" y="1192"/>    
+  <association id="22">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="26" name="firstFloor">        
-        <position height="18" width="51" x="932" y="1251"/>      
+      <attribute id="23" name="elevatorShaft">        
+        <position height="18" width="73" x="928" y="451"/>      
+      </attribute>      
+      <multiplicity id="24" minimum="0" maximum="1">        
+        <position height="16" width="23" x="951" y="477"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <bendpoint x="1148" y="392"/>    
+    <bendpoint x="1148" y="783"/>    
+    <bendpoint x="1148" y="1192"/>    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="26" name="secondFloor">        
+        <position height="18" width="68" x="1181" y="1131"/>      
       </attribute>      
       <multiplicity id="27" minimum="0" maximum="1">        
-        <position height="16" width="23" x="945" y="1270"/>      
+        <position height="16" width="23" x="1203" y="1156"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
@@ -159,77 +159,77 @@
   </association>  
   <association id="28">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="29" name="elevator">        
-        <position height="0" width="0" x="0" y="0"/>      
+      <attribute id="29" name="firstFloorLight">        
+        <position height="18" width="74" x="500" y="762"/>      
       </attribute>      
       <multiplicity id="30" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
+        <position height="16" width="23" x="526" y="783"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="31">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="32" name="secondFloorDoor">        
-        <position height="18" width="91" x="433" y="593"/>      
+      <attribute id="32" name="firstFloorButton">        
+        <position height="18" width="82" x="881" y="595"/>      
       </attribute>      
       <multiplicity id="33" minimum="0" maximum="1">        
-        <position height="16" width="23" x="467" y="607"/>      
+        <position height="16" width="23" x="925" y="616"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="34">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="35" name="elevatorShaft">        
-        <position height="18" width="73" x="928" y="451"/>      
-      </attribute>      
-      <multiplicity id="36" minimum="0" maximum="1">        
-        <position height="16" width="23" x="951" y="477"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="37">    
     <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="38" name="secondFloorLight">        
+      <attribute id="35" name="secondFloorLight">        
         <position height="18" width="91" x="597" y="802"/>      
       </attribute>      
-      <multiplicity id="39" minimum="0" maximum="1">        
+      <multiplicity id="36" minimum="0" maximum="1">        
         <position height="16" width="23" x="620" y="823"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="38" name="secondFloorDoor">        
+        <position height="18" width="91" x="433" y="593"/>      
+      </attribute>      
+      <multiplicity id="39" minimum="0" maximum="1">        
+        <position height="16" width="23" x="467" y="607"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="40">    
-    <bendpoint x="1148" y="392"/>    
-    <bendpoint x="1148" y="783"/>    
-    <bendpoint x="1148" y="1192"/>    
+    <bendpoint x="1169" y="392"/>    
+    <bendpoint x="1169" y="783"/>    
+    <bendpoint x="1169" y="1192"/>    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="41" name="secondFloor">        
-        <position height="18" width="68" x="1009" y="1275"/>      
+      <attribute id="41" name="firstFloor">        
+        <position height="18" width="51" x="1085" y="1132"/>      
       </attribute>      
       <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="16" width="23" x="1033" y="1296"/>      
+        <position height="16" width="23" x="1099" y="1153"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="43">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="44" name="firstFloorDoor">        
-        <position height="0" width="0" x="0" y="0"/>      
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="44" name="location">        
+        <position height="18" width="45" x="193" y="1182"/>      
       </attribute>      
       <multiplicity id="45" minimum="0" maximum="1">        
-        <position height="16" width="23" x="508" y="548"/>      
+        <position height="16" width="23" x="207" y="1206"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <generalization id="46">    

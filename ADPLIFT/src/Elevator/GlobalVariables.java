@@ -8,8 +8,8 @@ package Elevator;
  * @since Version 1.0.0
  */
 
-public class GlobalVariables {
-
+public interface GlobalVariables  {
+	
 	public static final String FIRST_FLOOR_NAME = "firstFloor";
 	public static final String SECOND_FLOOR_NAME = "secondFloor";
 	public static final String ELEVATOR_NAME = "elevator";
