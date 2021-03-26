@@ -4,7 +4,14 @@ import java.io.Serializable;
 
 import Elevator.GlobalVariables;
 
-public class ElevatorSimulation implements Serializable ,GlobalVariables {
+/**
+ * ElevatorSimulation Model Class
+ * @author H.D.Sachin Dilshan
+ * @version 1.0.0
+ * @since Version 1.0.0
+ */
+
+public class ElevatorSimulation extends GlobalVariables implements Serializable {
 
 	/**
 	 * 

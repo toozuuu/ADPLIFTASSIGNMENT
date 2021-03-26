@@ -1,6 +1,14 @@
 package Elevator;
 
-public interface GlobalVariables {
+/**
+ * Manage Global Variables
+ * 
+ * @author H.D.Sachin Dilshan
+ * @version 1.0.0
+ * @since Version 1.0.0
+ */
+
+public class GlobalVariables {
 
 	public static final String FIRST_FLOOR_NAME = "firstFloor";
 	public static final String SECOND_FLOOR_NAME = "secondFloor";
