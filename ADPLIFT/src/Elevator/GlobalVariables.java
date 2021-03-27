@@ -8,13 +8,15 @@ package Elevator;
  * @since Version 1.0.0
  */
 
-public interface GlobalVariables  {
-	
+public interface GlobalVariables {
+
 	public static final String FIRST_FLOOR_NAME = "firstFloor";
 	public static final String SECOND_FLOOR_NAME = "secondFloor";
 	public static final String ELEVATOR_NAME = "elevator";
 
 	public static final int WAKK_TIME = 3000;
+	public static final int NUMBER_OF_PEOPLE = 0;
+
 	public static final int AUTOMATIC_CLOSE_DELAY = 3000;
 
 	public static final int PERSON_CREATED = 1;

@@ -2,6 +2,8 @@ package Elevator.model;
 
 import java.io.Serializable;
 
+import Elevator.GlobalVariables;
+
 /**
  * Elevator Model Class
  * 
@@ -10,7 +12,7 @@ import java.io.Serializable;
  * @since Version 1.0.0
  */
 
-public class Elevator implements Serializable {
+public class Elevator implements Serializable, GlobalVariables {
 	/**
 	 * 
 	 */
@@ -18,6 +20,7 @@ public class Elevator implements Serializable {
 
 	private String currentFloorLocation;
 	private String destinationFloorLocation;
+
 	private boolean isBellRing = false;
 	private boolean isDoorOpen = false;
 	private boolean isMove = false;
@@ -30,11 +33,9 @@ public class Elevator implements Serializable {
 
 	private Light firstFloorLight;
 	private Light secondFloorLight;
-	
+
 	private Floor firstFloor;
 	private Floor secondFloor;
-	
-	private int numberOfPeople = 0;
 
 	public String getCurrentFloorLocation() {
 		return currentFloorLocation;
@@ -139,6 +140,5 @@ public class Elevator implements Serializable {
 	public void setSecondFloor(Floor secondFloor) {
 		this.secondFloor = secondFloor;
 	}
-
 
 }

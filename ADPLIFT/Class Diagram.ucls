@@ -30,7 +30,7 @@
   </class>  
   <class id="4" language="java" name="Elevator.model.Elevator" project="ADPLIFT" 
     file="/ADPLIFT/src/Elevator/model/Elevator.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="823" y="1031"/>    
+    <position height="-1" width="-1" x="773" y="694"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="Elevator.model.Floor" project="ADPLIFT" 
     file="/ADPLIFT/src/Elevator/model/Floor.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1230" y="1318"/>    
+    <position height="-1" width="-1" x="1145" y="1126"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
