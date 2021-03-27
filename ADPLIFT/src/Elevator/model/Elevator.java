@@ -22,8 +22,19 @@ public class Elevator implements Serializable {
 	private boolean isDoorOpen = false;
 	private boolean isMove = false;
 
-	private Door elevatorDoor;
-	private Button elevatorButton;
+	private Button firstFloorButton;
+	private Button secondFloorButton;
+
+	private Door firstFloorDoor;
+	private Door secondFloorDoor;
+
+	private Light firstFloorLight;
+	private Light secondFloorLight;
+	
+	private Floor firstFloor;
+	private Floor secondFloor;
+	
+	private int numberOfPeople = 0;
 
 	public String getCurrentFloorLocation() {
 		return currentFloorLocation;
@@ -65,20 +76,69 @@ public class Elevator implements Serializable {
 		this.isMove = isMove;
 	}
 
-	public Door getElevatorDoor() {
-		return elevatorDoor;
+	public Button getFirstFloorButton() {
+		return firstFloorButton;
 	}
 
-	public void setElevatorDoor(Door elevatorDoor) {
-		this.elevatorDoor = elevatorDoor;
+	public void setFirstFloorButton(Button firstFloorButton) {
+		this.firstFloorButton = firstFloorButton;
 	}
 
-	public Button getElevatorButton() {
-		return elevatorButton;
+	public Button getSecondFloorButton() {
+		return secondFloorButton;
 	}
 
-	public void setElevatorButton(Button elevatorButton) {
-		this.elevatorButton = elevatorButton;
+	public void setSecondFloorButton(Button secondFloorButton) {
+		this.secondFloorButton = secondFloorButton;
 	}
+
+	public Door getFirstFloorDoor() {
+		return firstFloorDoor;
+	}
+
+	public void setFirstFloorDoor(Door firstFloorDoor) {
+		this.firstFloorDoor = firstFloorDoor;
+	}
+
+	public Door getSecondFloorDoor() {
+		return secondFloorDoor;
+	}
+
+	public void setSecondFloorDoor(Door secondFloorDoor) {
+		this.secondFloorDoor = secondFloorDoor;
+	}
+
+	public Light getFirstFloorLight() {
+		return firstFloorLight;
+	}
+
+	public void setFirstFloorLight(Light firstFloorLight) {
+		this.firstFloorLight = firstFloorLight;
+	}
+
+	public Light getSecondFloorLight() {
+		return secondFloorLight;
+	}
+
+	public void setSecondFloorLight(Light secondFloorLight) {
+		this.secondFloorLight = secondFloorLight;
+	}
+
+	public Floor getFirstFloor() {
+		return firstFloor;
+	}
+
+	public void setFirstFloor(Floor firstFloor) {
+		this.firstFloor = firstFloor;
+	}
+
+	public Floor getSecondFloor() {
+		return secondFloor;
+	}
+
+	public void setSecondFloor(Floor secondFloor) {
+		this.secondFloor = secondFloor;
+	}
+
 
 }

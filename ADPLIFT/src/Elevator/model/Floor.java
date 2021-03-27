@@ -16,14 +16,16 @@ public class Floor extends Location implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private ElevatorShaft elevatorShaft;
-	
-	public ElevatorShaft getElevatorShaft() {
-		return elevatorShaft;
+	private Elevator elevator;
+
+	public Elevator getElevator() {
+		return elevator;
+	}
+
+	public void setElevator(Elevator elevator) {
+		this.elevator = elevator;
 	}
 	
-	public void setElevatorShaft(ElevatorShaft elevatorShaft) {
-		this.elevatorShaft = elevatorShaft;
-	}
+	
 	
 }

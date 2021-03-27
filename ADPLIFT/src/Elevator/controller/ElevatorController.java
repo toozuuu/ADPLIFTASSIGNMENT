@@ -3,7 +3,8 @@ package Elevator.controller;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import Elevator.model.ElevatorSimulation;
+import Elevator.model.Elevator;
+
 
 /**
  * Elevator Controller
@@ -19,13 +20,13 @@ public class ElevatorController extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private ElevatorSimulation elevatorSimulation;
+	private Elevator elevator;
 	
 	private JButton firstFloorControllerButton;
 	private JButton secondFloorControllerButton;
 	
 		
-	public ElevatorController(ElevatorSimulation elevatorSimulation) {
+	public ElevatorController(Elevator elevator) {
 		
 	}
 
