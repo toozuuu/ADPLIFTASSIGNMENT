@@ -21,10 +21,9 @@ public class ElevatorSimulation implements ElevatorSimulationListener, ElevatorG
 	private DoorListener doorListener;
 	private ButtonListener buttonListener;
 	private LightListener lightListener;
-	private BellListener bellListener;
 	private ElevatorMoveListener elevatorMoveListener;
 
-	private int numberOfPeople = 0;
+	private static int peopleCount = NUMBER_OF_PEOPLE;
 
 	public ElevatorSimulation() {
 
@@ -40,7 +39,6 @@ public class ElevatorSimulation implements ElevatorSimulationListener, ElevatorG
 		elevatorShaft.setButtonListener(this);
 		elevatorShaft.addElevatorMoveListener(this);
 		elevatorShaft.setLightListener(this);
-		elevatorShaft.setBellListener(this);
 
 		personMoveListeners = new HashSet<>(1);
 
@@ -60,14 +58,14 @@ public class ElevatorSimulation implements ElevatorSimulationListener, ElevatorG
 
 	public void addPerson(String floorName) {
 
-		Person person = new Person(numberOfPeople, getFloor(floorName));
-		person.setName(Integer.toString(numberOfPeople));
+		Person person = new Person(peopleCount, getFloor(floorName));
+		person.setName(Integer.toString(peopleCount));
 
 		person.setPersonMoveListener(this);
 
 		person.start();
 
-		numberOfPeople++;
+		peopleCount++;
 
 	}
 
@@ -158,10 +156,6 @@ public class ElevatorSimulation implements ElevatorSimulationListener, ElevatorG
 		buttonListener.buttonReset(buttonEvent);
 	}
 
-	public void bellRang(BellEvent bellEvent) {
-		bellListener.bellRang(bellEvent);
-	}
-
 	public void lightTurnedOn(LightEvent lightEvent) {
 		lightListener.lightTurnedOn(lightEvent);
 	}
@@ -177,7 +171,6 @@ public class ElevatorSimulation implements ElevatorSimulationListener, ElevatorG
 		setDoorListener(listener);
 		setButtonListener(listener);
 		setLightListener(listener);
-		setBellListener(listener);
 	}
 
 	public void addPersonMoveListener(PersonMoveListener listener) {
@@ -200,7 +193,4 @@ public class ElevatorSimulation implements ElevatorSimulationListener, ElevatorG
 		lightListener = listener;
 	}
 
-	public void setBellListener(BellListener listener) {
-		bellListener = listener;
-	}
 }

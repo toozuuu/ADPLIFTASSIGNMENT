@@ -12,7 +12,7 @@ public class Light implements ElevatorMoveListener, Serializable,ElevatorGlobalV
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private boolean lightOn;
+	private boolean isLightOn = false;
 
 
 	private LightListener lightListener;
@@ -24,9 +24,9 @@ public class Light implements ElevatorMoveListener, Serializable,ElevatorGlobalV
 	}
 
 	public void turnOnLight(Location location) {
-		if (!lightOn) {
+		if (!isLightOn) {
 
-			lightOn = true;
+			isLightOn = true;
 
 			lightListener.lightTurnedOn(new LightEvent(this, location));
 
@@ -52,16 +52,16 @@ public class Light implements ElevatorMoveListener, Serializable,ElevatorGlobalV
 	}
 
 	public void turnOffLight(Location location) {
-		if (lightOn) {
+		if (isLightOn) {
 
-			lightOn = false;
+			isLightOn = false;
 
 			lightListener.lightTurnedOff(new LightEvent(this, location));
 		}
 	}
 
 	public boolean isLightOn() {
-		return lightOn;
+		return isLightOn;
 	}
 
 	public void elevatorDeparted(ElevatorMoveEvent moveEvent) {

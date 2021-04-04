@@ -5,7 +5,7 @@ import java.util.*;
 
 import elevator.event.*;
 
-public class ElevatorShaft implements ElevatorMoveListener, LightListener, BellListener, Serializable {
+public class ElevatorShaft implements ElevatorMoveListener, LightListener, Serializable {
 
 	/**
 	 * 
@@ -26,7 +26,6 @@ public class ElevatorShaft implements ElevatorMoveListener, LightListener, BellL
 	private DoorListener doorListener;
 	private ButtonListener buttonListener;
 	private LightListener lightListener;
-	private BellListener bellListener;
 	private Set<ElevatorMoveListener> elevatorMoveListeners;
 
 	public ElevatorShaft(Floor firstFloor, Floor secondFloor) {
@@ -87,8 +86,6 @@ public class ElevatorShaft implements ElevatorMoveListener, LightListener, BellL
 
 		elevator.addElevatorMoveListener(this);
 
-		elevator.setBellListener(this);
-
 		elevator.setButtonListener(new ButtonListener() {
 
 			public void buttonPressed(ButtonEvent buttonEvent) {
@@ -147,10 +144,6 @@ public class ElevatorShaft implements ElevatorMoveListener, LightListener, BellL
 		return secondFloorLight;
 	}
 
-	public void bellRang(BellEvent bellEvent) {
-		bellListener.bellRang(bellEvent);
-	}
-
 	public void lightTurnedOn(LightEvent lightEvent) {
 		lightListener.lightTurnedOn(lightEvent);
 	}
@@ -199,7 +192,4 @@ public class ElevatorShaft implements ElevatorMoveListener, LightListener, BellL
 		lightListener = listener;
 	}
 
-	public void setBellListener(BellListener listener) {
-		bellListener = listener;
-	}
 }

@@ -6,7 +6,7 @@ import java.util.*;
 import elevator.ElevatorGlobalValues;
 import elevator.event.*;
 
-public class Elevator extends Location implements Runnable, BellListener, ElevatorGlobalValues, Serializable {
+public class Elevator extends Location implements Runnable, ElevatorGlobalValues, Serializable {
 
 	/**
 	 * 
@@ -15,22 +15,20 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 
 	private boolean elevatorRunning = false;
 
-	private boolean moving = false;
+	private boolean isMove = false;
 
 	private Location currentFloorLocation;
 
 	private Location destinationFloorLocation;
 
-	private boolean summoned;
+	private boolean moved;
 
 	private Set<ElevatorMoveListener> elevatorMoveListeners;
-	private BellListener bellListener;
 	private ButtonListener elevatorButtonListener;
 	private DoorListener elevatorDoorListener;
 
 	private ElevatorDoor elevatorDoor;
 	private Button elevatorButton;
-	private Bell bell;
 
 	public static final int ONE_SECOND = 1000;
 
@@ -43,11 +41,8 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 
 		elevatorDoor = new ElevatorDoor();
 		elevatorButton = new Button();
-		bell = new Bell();
 
-		bell.setBellListener(this);
-
-		elevatorMoveListeners = new HashSet<ElevatorMoveListener>(1);
+		elevatorMoveListeners = new HashSet<>(1);
 
 		currentFloorLocation = firstFloor;
 		destinationFloorLocation = secondFloor;
@@ -55,8 +50,6 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 		addElevatorMoveListener(elevatorButton);
 
 		addElevatorMoveListener(elevatorDoor);
-
-		addElevatorMoveListener(bell);
 
 		elevatorButton.setButtonListener(new ButtonListener() {
 
@@ -117,7 +110,7 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 
 			pauseThread(ONE_SECOND);
 
-			sendDepartureEvent(currentFloorLocation);
+			sendDepartureEvent();
 
 			pauseThread(TRAVEL_TIME);
 
@@ -150,11 +143,11 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 	}
 
 	private void setMoving(boolean elevatorMoving) {
-		moving = elevatorMoving;
+		isMove = elevatorMoving;
 	}
 
 	public boolean isMoving() {
-		return moving;
+		return isMove;
 	}
 
 	private boolean isElevatorRunning() {
@@ -163,10 +156,6 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 
 	public void addElevatorMoveListener(ElevatorMoveListener listener) {
 		elevatorMoveListeners.add(listener);
-	}
-
-	public void setBellListener(BellListener listener) {
-		bellListener = listener;
 	}
 
 	public void setButtonListener(ButtonListener listener) {
@@ -189,15 +178,15 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 
 		}
 
-		if (summoned) {
+		if (moved) {
 			setMoving(true);
 		}
 
-		summoned = false;
+		moved = false;
 
 	}
 
-	private void sendDepartureEvent(Location location) {
+	private void sendDepartureEvent() {
 
 		Iterator<ElevatorMoveListener> iterator = elevatorMoveListeners.iterator();
 
@@ -224,14 +213,8 @@ public class Elevator extends Location implements Runnable, BellListener, Elevat
 		} else
 
 		if (location == currentFloorLocation)
-			summoned = true;
+			moved = true;
 
-	}
-
-	public void bellRang(BellEvent bellEvent) {
-
-		if (bellListener != null)
-			bellListener.bellRang(bellEvent);
 	}
 
 	public Location getCurrentFloor() {

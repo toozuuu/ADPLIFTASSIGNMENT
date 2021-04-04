@@ -12,9 +12,9 @@ public class Person extends Thread implements Serializable, ElevatorGlobalValues
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private int id = -1;
+	private int id = 1;
 
-	private boolean moving;
+	private boolean isMove = false;
 
 	private Location location;
 
@@ -25,7 +25,7 @@ public class Person extends Thread implements Serializable, ElevatorGlobalValues
 
 		setId(identifier);
 		location = initialLocation;
-		moving = true;
+		isMove = true;
 	}
 
 	public void setPersonMoveListener(PersonMoveListener listener) {
@@ -41,11 +41,11 @@ public class Person extends Thread implements Serializable, ElevatorGlobalValues
 	}
 
 	public void setMoving(boolean personMoving) {
-		moving = personMoving;
+		isMove = personMoving;
 	}
 
-	public boolean isMoving() {
-		return moving;
+	public boolean isMove() {
+		return isMove;
 	}
 
 	public void run() {
@@ -107,14 +107,12 @@ public class Person extends Thread implements Serializable, ElevatorGlobalValues
 
 		synchronized (elevator) {
 
-			Door elevatorDoor = getLocation().getDoor();
-
-			synchronized (elevatorDoor) {
+			synchronized (getLocation().getDoor()) {
 
 				try {
 
-					while (!elevatorDoor.isDoorOpen()) {
-						elevatorDoor.wait();
+					while (!getLocation().getDoor().isDoorOpen()) {
+						getLocation().getDoor().wait();
 
 					}
 
@@ -194,4 +192,5 @@ public class Person extends Thread implements Serializable, ElevatorGlobalValues
 	public void setId(int id) {
 		this.id = id;
 	}
+
 }

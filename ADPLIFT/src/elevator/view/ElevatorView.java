@@ -39,8 +39,6 @@ public class ElevatorView extends JPanel implements ActionListener, ElevatorSimu
 	private static final String elevatorButtonFrames[] = { "images/elevatorButtonUnpressed.png",
 			"images/elevatorButtonPressed.png", "images/elevatorButtonLit.png" };
 
-	private static final String bellFrames[] = { "images/bell1.png", "images/bell2.png", "images/bell3.png" };
-
 	private static final String floorImage = "images/floor.png";
 	private static final String ceilingImage = "images/ceiling.png";
 	private static final String elevatorImage = "images/Elevator.png";
@@ -58,7 +56,6 @@ public class ElevatorView extends JPanel implements ActionListener, ElevatorSimu
 	private AnimatedPanel firstFloorButtonPanel;
 	private AnimatedPanel secondFloorButtonPanel;
 	private AnimatedPanel elevatorButtonPanel;
-	private AnimatedPanel bellPanel;
 	private AnimatedPanel elevatorLightPanel;
 	private AnimatedPanel firstFloorLightPanel;
 	private AnimatedPanel secondFloorLightPanel;
@@ -163,13 +160,7 @@ public class ElevatorView extends JPanel implements ActionListener, ElevatorSimu
 		elevatorLightPanel = new AnimatedPanel(0, lightFrames);
 		elevatorLightPanel.setPosition(OFFSET, (double) 5 * OFFSET);
 
-		bellPanel = new AnimatedPanel(0, bellFrames);
-
 		yPosition = elevatorLightPanel.getPosition().getY() + elevatorLightPanel.getHeight() + OFFSET;
-
-		bellPanel.setPosition(OFFSET, yPosition);
-		int bellRingAnimation[] = { 0, 1, 0, 2 };
-		bellPanel.addFrameSequence(bellRingAnimation);
 
 		elevatorButtonPanel = new AnimatedPanel(0, elevatorButtonFrames);
 
@@ -198,7 +189,6 @@ public class ElevatorView extends JPanel implements ActionListener, ElevatorSimu
 
 		elevatorPanel.add(doorPanel);
 		elevatorPanel.add(elevatorLightPanel);
-		elevatorPanel.add(bellPanel);
 		elevatorPanel.add(elevatorButtonPanel);
 
 	}
@@ -543,10 +533,6 @@ public class ElevatorView extends JPanel implements ActionListener, ElevatorSimu
 				secondFloorButtonPanel.setCurrentFrame(0);
 		}
 
-	}
-
-	public void bellRang(BellEvent bellEvent) {
-		bellPanel.playAnimation(0);
 	}
 
 	public void lightTurnedOn(LightEvent lightEvent) {
